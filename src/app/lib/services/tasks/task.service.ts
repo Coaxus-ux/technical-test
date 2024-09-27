@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { ITask } from '@lib/interfaces';
 import { Priority } from '@lib/enums/priority';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
     providedIn: 'root',
 })
 export class TaskService {
-    tasks: ITask[] = [
+    private _tasks: ITask[] = [
         {
             id: '1',
             title: 'Task 1',
@@ -36,50 +37,61 @@ export class TaskService {
         },
     ];
 
-    getTasks(): ITask[] {
-        return this.tasks;
+    getTasks(): Observable<ITask[]> {
+        return of(this._tasks);
     }
 
-    getTaskById(id: string): ITask | undefined {
-        return this.tasks.find((task) => task.id === id);
+    getTaskById(id: string): Observable<ITask | undefined> {
+        const task = this._tasks.find((task) => task.id === id);
+        return of(task);
     }
 
-    getCompletedTasks(): ITask[] {
-        return this.tasks.filter((task) => task.completed);
+    getCompletedTasks(): Observable<ITask[]> {
+        const completedTasks = this._tasks.filter((task) => task.completed);
+        return of(completedTasks);
     }
 
-    getPendingTasks(): ITask[] {
-        return this.tasks.filter((task) => !task.completed);
+    getPendingTasks(): Observable<ITask[]> {
+        const pendingTasks = this._tasks.filter((task) => !task.completed);
+        return of(pendingTasks);
     }
 
-    getTasksByPriority(priority: Priority): ITask[] {
-        return this.tasks.filter((task) => task.priority === priority);
+    getTasksByPriority(priority: Priority): Observable<ITask[]> {
+        const tasksByPriority = this._tasks.filter((task) => task.priority === priority);
+        return of(tasksByPriority);
     }
 
-    addTask(task: ITask): void {
-        this.tasks.push(task);
+    addTask(task: ITask): Observable<ITask[]> {
+        this._tasks.push(task);
+        return of(this._tasks);
     }
 
-    updateTask(task: ITask): void {
-        const index = this.tasks.findIndex((t) => t.id === task.id);
-        this.tasks[index] = task;
+    updateTask(task: ITask): Observable<ITask[]> {
+        const index = this._tasks.findIndex((t) => t.id === task.id);
+        if (index !== -1) {
+            this._tasks[index] = task;
+        }
+        return of(this._tasks);
     }
 
-    deleteTask(id: string): void {
-        this.tasks = this.tasks.filter((task) => task.id !== id);
+    deleteTask(id: string): Observable<ITask[]> {
+        this._tasks = this._tasks.filter((task) => task.id !== id);
+        return of(this._tasks);
     }
 
-    completeTask(id: string): void {
-        const task = this.tasks.find((t) => t.id === id);
+    completeTask(id: string): Observable<ITask[]> {
+        const task = this._tasks.find((t) => t.id === id);
         if (task) {
             task.completed = true;
         }
+        return of(this._tasks);
     }
 
-    unCompleteTask(id: string): void {
-        const task = this.tasks.find((t) => t.id === id);
+    unCompleteTask(id: string): Observable<ITask[]> {
+        const task = this._tasks.find((t) => t.id === id);
         if (task) {
             task.completed = false;
         }
+        return of(this._tasks);
     }
 }

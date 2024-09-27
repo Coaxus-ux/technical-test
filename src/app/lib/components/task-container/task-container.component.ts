@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { CheckboxModule } from 'primeng/checkbox';
-import { FormsModule } from '@angular/forms';
+import { Component, Input } from '@angular/core';
+import { ITask } from '@lib/interfaces';
+import { TaskTitleComponent } from '@lib/components/task-title/task-title.component';
+import { TaskActionsComponent } from '@lib/components/task-actions/task-actions.component';
 
 @Component({
     selector: 'app-task-container',
-    standalone: true,
-    imports: [CommonModule, CheckboxModule, FormsModule],
     templateUrl: './task-container.component.html',
+    standalone: true,
+    imports: [TaskTitleComponent, TaskActionsComponent],
 })
 export class TaskContainerComponent {
-    checked = false;
+    @Input() task: ITask | undefined;
+    @Input() checked = false;
 }
