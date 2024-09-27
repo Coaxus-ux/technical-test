@@ -12,4 +12,8 @@ export class UsersService {
     getUsers(): Observable<IUser[]> {
         return of(this._users);
     }
+
+    countUsers(): Observable<number> {
+        return of(this._users.length);
+    }
 }
