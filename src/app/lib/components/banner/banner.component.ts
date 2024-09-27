@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DateFormatService } from '@lib/services/Date/DateFormatService';
+import { DateFormatService } from '@lib/services/date/date-format.service';
 
 @Component({
     selector: 'app-banner',
