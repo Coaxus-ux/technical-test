@@ -15,7 +15,6 @@ import { catchError } from 'rxjs/operators';
 export const serverErrorInterceptor: HttpInterceptorFn = (request, next) => {
     const router = inject(Router);
 
-
     return next(request).pipe(
         catchError((error: HttpErrorResponse) => {
             if ([HttpStatusCode.Unauthorized, HttpStatusCode.Forbidden].includes(error.status)) {
