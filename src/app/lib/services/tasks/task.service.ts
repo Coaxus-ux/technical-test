@@ -2,40 +2,13 @@ import { Injectable } from '@angular/core';
 import { ITask } from '@lib/interfaces';
 import { Priority } from '@lib/enums/priority';
 import { Observable, of } from 'rxjs';
+import { tasks } from '@lib/utils/initdb';
 
 @Injectable({
     providedIn: 'root',
 })
 export class TaskService {
-    private _tasks: ITask[] = [
-        {
-            id: '1',
-            title: 'Task 1',
-            description: 'Description 1',
-            date: new Date(),
-            completed: false,
-            priority: Priority.Low,
-            participants: ['User 1', 'User 2'],
-        },
-        {
-            id: '2',
-            title: 'Task 2',
-            description: 'Description 2',
-            date: new Date(),
-            completed: false,
-            priority: Priority.Medium,
-            participants: ['User 3', 'User 4'],
-        },
-        {
-            id: '3',
-            title: 'Task 3',
-            description: 'Description 3',
-            date: new Date(),
-            completed: false,
-            priority: Priority.High,
-            participants: ['User 5', 'User 6'],
-        },
-    ];
+    private _tasks: ITask[] = tasks;
 
     getTasks(): Observable<ITask[]> {
         return of(this._tasks);
