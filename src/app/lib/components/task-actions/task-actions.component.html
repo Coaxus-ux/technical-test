@@ -3,5 +3,11 @@
         <span class="icon-[circum--clock-1] h-4 w-4 bg-gray-700"></span>
         asdsa - asd
     </button>
-    <button class="icon-[pepicons-pop--dots-y] small-icon-size" aria-label="Task Options"></button>
+    <div class="card flex justify-content-center">
+        <p-toast></p-toast>
+        <p-menu #menu [model]="items" [popup]="true"></p-menu>
+        <button pButton type="reset"  class="bg-white p-2 border-0" (click)="menu.toggle($event)">
+            <span class="icon-[pepicons-pop--dots-y] small-icon-size bg-black"></span>
+        </button>
+    </div>
 </div>
