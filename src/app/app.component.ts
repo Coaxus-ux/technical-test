@@ -3,11 +3,12 @@ import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { PrimeNGConfig } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
+import { MenuComponent } from '@lib/components/menu/menu.component';
 
 @Component({
     selector: 'app-root',
     standalone: true,
-    imports: [CommonModule, RouterModule, ButtonModule],
+    imports: [CommonModule, RouterModule, ButtonModule, MenuComponent],
     templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit {

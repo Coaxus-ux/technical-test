@@ -1,0 +1,14 @@
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(-20px);
+}
+
+.menu-slide {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(0);
+}
