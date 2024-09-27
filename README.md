@@ -32,3 +32,4 @@ la opción de agregar y eliminar habilidades por persona.
 1. Clona el repositorio:
    ```bash
    git clone https://github.com/Coaxus-ux/technical-test
+   ```

@@ -1,13 +1,26 @@
-<nav class="bg-white rounded-xl px-3 py-8 lg:w-64 lg:h-full" aria-label="Task Manager Navigation">
+<nav
+    class="bg-white rounded-xl px-3 py-8 lg:w-64 lg:h-full"
+    aria-label="Task Manager Navigation"
+>
     <div class="flex justify-between items-center space-x-2">
         <h3 class="text-xl font-bold">Task Manager</h3>
-        <button (click)="toggleMenu()" class="lg:hidden icon-[mi--menu] icon-size" aria-label="Open menu"></button>
+        <button
+            (click)="toggleMenu()"
+            class="lg:hidden icon-[mi--menu] icon-size"
+            aria-label="Open menu"
+        ></button>
     </div>
-    <section [@menuAnimation]="isMenuVisible()" aria-labelledby="menu-items" class="space-y-1 px-2 mt-5">
+    <section
+        [@menuAnimation]="isMenuVisible()"
+        aria-labelledby="menu-items"
+        class="space-y-1 px-2 mt-5"
+    >
         <ng-container *ngFor="let item of items">
-            <app-menu-button [title]="item.title" [iconClass]="item.iconClass"
-                             [itemsQuantity]="item.itemsQuantity"></app-menu-button>
+            <app-menu-button
+                [title]="item.title"
+                [iconClass]="item.iconClass"
+                [itemsQuantity]="item.itemsQuantity"
+            ></app-menu-button>
         </ng-container>
-
     </section>
 </nav>
