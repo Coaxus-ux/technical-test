@@ -1,7 +1,17 @@
-<button pRipple class="fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-black text-white p-5 rounded-xl">
+<button pRipple class="fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-black text-white p-5 rounded-xl"
+        (click)="showDialog()">
     <p class="items-center flex gap-1">
-
         <span class="icon-[octicon--plus-24] small-icon-size"></span>
         Create a new task
     </p>
 </button>
+<p-dialog header="Header" [(visible)]="visible" [breakpoints]="{ '960px': '75vw' }" [style]="{ width: '50vw' }"
+          [draggable]="false" [resizable]="false">
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.
+    </p>
+</p-dialog>

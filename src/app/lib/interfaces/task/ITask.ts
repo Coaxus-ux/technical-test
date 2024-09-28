@@ -1,4 +1,5 @@
 import { Priority } from '@lib/enums/priority';
+import { IUser } from '@lib/interfaces';
 // eslint-disable-next-line @typescript-eslint/naming-convention
 export interface ITask {
     id: string;
@@ -6,6 +7,6 @@ export interface ITask {
     description: string;
     completed: boolean;
     priority: Priority;
-    participants: string[];
+    participants: IUser[];
     date: Date;
 }

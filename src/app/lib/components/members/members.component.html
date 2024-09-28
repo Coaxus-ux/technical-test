@@ -1,0 +1,23 @@
+<div class="flex">
+    <ng-container *ngFor="let member of members; let i = index">
+        <div *ngIf="i < 3"
+             [ngClass]="{
+               'relative rounded-full p-1 -ml-5 first:ml-0': true,
+               'z-10': i === 0,
+               'z-20': i === 1,
+               'z-30': i === 2
+             }"
+             [ngStyle]="{ 'background-color': getColor(i) }">
+            <img [src]="'https://api.dicebear.com/9.x/pixel-art/svg?seed=' + member.avatarSeed"
+                 [alt]="member.name"
+                 class="w-8 h-8 rounded-full grayscale">
+        </div>
+    </ng-container>
+    <div *ngIf="members.length > 3"
+         class="relative rounded-full bg-gray-300  -ml-5 flex items-center justify-center z-40  h-[40px] w-[40px] ">
+        <div class="text-gray-700 font-semibold text-md flex items-center">
+            <span class="pi pi-plus"></span>
+            {{ members.length - 3 }}
+        </div>
+    </div>
+</div>

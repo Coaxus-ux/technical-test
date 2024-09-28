@@ -81,7 +81,7 @@ const tasks: ITask[] = [
         description: 'Crear una API REST usando Node.js y Express',
         completed: false,
         priority: Priority.High,
-        participants: [users[0].name, users[2].name],
+        participants: [users[0], users[2]],
         date: new Date('2024-10-01'),
     },
     {
@@ -90,7 +90,7 @@ const tasks: ITask[] = [
         description: 'Desarrollar un componente reutilizable en React para la interfaz.',
         completed: true,
         priority: Priority.Medium,
-        participants: [users[1].name],
+        participants: [users[1]],
         date: new Date('2024-09-15'),
     },
     {
@@ -99,7 +99,7 @@ const tasks: ITask[] = [
         description: 'Agregar tipado y validaciones estrictas en el proyecto usando TypeScript.',
         completed: false,
         priority: Priority.Low,
-        participants: [users[0].name, users[1].name],
+        participants: [users[0], users[1]],
         date: new Date('2024-09-30'),
     },
     {
@@ -108,7 +108,7 @@ const tasks: ITask[] = [
         description: 'Reorganizar y limpiar el código CSS del proyecto para mejorar mantenibilidad.',
         completed: false,
         priority: Priority.Medium,
-        participants: [users[3].name],
+        participants: [users[3]],
         date: new Date('2024-10-05'),
     },
     {
@@ -117,7 +117,7 @@ const tasks: ITask[] = [
         description: 'Migrar la aplicación frontend de React a Angular.',
         completed: false,
         priority: Priority.High,
-        participants: [users[1].name, users[4].name],
+        participants: [users[1], users[4]],
         date: new Date('2024-10-10'),
     },
     {
@@ -126,7 +126,7 @@ const tasks: ITask[] = [
         description: 'Implementar un pipeline de integración continua y despliegue continuo usando Jenkins.',
         completed: false,
         priority: Priority.High,
-        participants: [users[0].name, users[2].name, users[4].name],
+        participants: [users[0], users[2], users[4], users[1]],
         date: new Date('2024-10-15'),
     },
     {
@@ -135,7 +135,7 @@ const tasks: ITask[] = [
         description: 'Desarrollar una página de aterrizaje utilizando HTML, CSS y JavaScript.',
         completed: true,
         priority: Priority.Low,
-        participants: [users[3].name],
+        participants: [users[3]],
         date: new Date('2024-09-20'),
     },
     {
@@ -145,7 +145,7 @@ const tasks: ITask[] = [
             'Realizar ajustes y optimizaciones en las consultas SQL para mejorar el rendimiento de la aplicación.',
         completed: false,
         priority: Priority.Medium,
-        participants: [users[2].name],
+        participants: [users[2]],
         date: new Date('2024-09-29'),
     },
     {
@@ -154,7 +154,7 @@ const tasks: ITask[] = [
         description: 'Revisar e implementar mejoras de seguridad en la API y la base de datos.',
         completed: false,
         priority: Priority.High,
-        participants: [users[1].name, users[3].name],
+        participants: [users[1], users[3]],
         date: new Date('2024-10-20'),
     },
     {
@@ -163,7 +163,7 @@ const tasks: ITask[] = [
         description: 'Mejorar y actualizar la documentación técnica del proyecto para reflejar los cambios recientes.',
         completed: true,
         priority: Priority.Low,
-        participants: [users[0].name],
+        participants: [users[0]],
         date: new Date('2024-09-25'),
     },
     {
@@ -172,7 +172,7 @@ const tasks: ITask[] = [
         description: 'Implementar un sistema de autenticación con OAuth para mejorar la seguridad de inicio de sesión.',
         completed: false,
         priority: Priority.Medium,
-        participants: [users[1].name, users[4].name],
+        participants: [users[1], users[4]],
         date: new Date('2024-10-22'),
     },
     {
@@ -181,7 +181,7 @@ const tasks: ITask[] = [
         description: 'Configurar y optimizar el servidor Nginx para balanceo de carga y seguridad.',
         completed: false,
         priority: Priority.High,
-        participants: [users[2].name],
+        participants: [users[2]],
         date: new Date('2024-10-25'),
     },
     {
@@ -190,7 +190,7 @@ const tasks: ITask[] = [
         description: 'Desarrollar y ejecutar pruebas unitarias para el backend con Jest.',
         completed: true,
         priority: Priority.Medium,
-        participants: [users[0].name, users[3].name],
+        participants: [users[0], users[3]],
         date: new Date('2024-09-28'),
     },
     {
@@ -199,7 +199,7 @@ const tasks: ITask[] = [
         description: 'Reducir el tamaño de las imágenes para mejorar el tiempo de carga del sitio web.',
         completed: false,
         priority: Priority.Low,
-        participants: [users[1].name],
+        participants: [users[1]],
         date: new Date('2024-10-05'),
     },
     {
@@ -208,7 +208,7 @@ const tasks: ITask[] = [
         description: 'Actualizar todas las dependencias del proyecto a sus últimas versiones.',
         completed: true,
         priority: Priority.Medium,
-        participants: [users[0].name],
+        participants: [users[0]],
         date: new Date('2024-09-30'),
     },
 ];
