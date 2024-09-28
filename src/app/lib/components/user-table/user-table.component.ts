@@ -1,8 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IUser } from '@lib/interfaces/users/IUser';
+import { IUser } from '@lib/interfaces';
 import { RippleModule } from 'primeng/ripple';
-
 @Component({
     selector: 'app-user-table',
     standalone: true,

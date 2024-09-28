@@ -1,0 +1,11 @@
+<ng-container *ngIf="isComplete; else incomplete">
+    <ng-container *ngTemplateOutlet="completed"></ng-container>
+</ng-container>
+
+<ng-template #completed>
+    <div class="bg-green-200 text-green-700 px-2 py-1 rounded-full border-green-300 border-[1px] text-xs font-medium">Complete</div>
+</ng-template>
+
+<ng-template #incomplete>
+    <div class="bg-red-200 text-red-700 px-2 py-1 rounded-full border-red-300 border-[1px] text-xs font-medium">Pending</div>
+</ng-template>

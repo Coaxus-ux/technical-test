@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TableModule } from 'primeng/table';
 import { UsersService } from '@lib/services/users/users.service';
-import { IUser } from '@lib/interfaces/users/IUser';
+import { IUser } from '@lib/interfaces';
 import { UserBarComponent } from '@lib/components/user-bar/user-bar.component';
 import { UserTableComponent } from '@lib/components/user-table/user-table.component';
 

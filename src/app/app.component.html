@@ -2,7 +2,9 @@
     <app-menu></app-menu>
     <div class="lg:p-10 p-5 w-screen">
         <app-banner></app-banner>
-        <router-outlet></router-outlet>
+        <div class="overflow-auto lg:h-4/5 h-1/2">
+            <router-outlet></router-outlet>
+        </div>
     </div>
     <app-add-task></app-add-task>
 </div>

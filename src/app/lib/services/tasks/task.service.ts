@@ -67,4 +67,9 @@ export class TaskService {
         }
         return of(this._tasks);
     }
+
+    countOpenTasks(): Observable<number> {
+        const openTasks = this._tasks.filter((task) => !task.completed);
+        return of(openTasks.length);
+    }
 }

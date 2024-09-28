@@ -2,7 +2,7 @@ import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MenuButtonComponent } from '@lib/components/menu-button/menu-button.component';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import { MenuService } from '@lib/services/menu/menu.service';
+import { MenuService } from '@lib/services';
 
 @Component({
     selector: 'app-menu',

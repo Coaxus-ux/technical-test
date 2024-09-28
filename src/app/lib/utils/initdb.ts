@@ -1,8 +1,6 @@
 // database
 import { Priority } from '@lib/enums/priority';
-import { ITask } from '@lib/interfaces/task/ITask';
-import { ISkill } from '@lib/interfaces/users/ISkill';
-import { IUser } from '@lib/interfaces/users/IUser';
+import { ITask, ISkill, IUser } from '@lib/interfaces';
 
 const skills: ISkill[] = [
     {
@@ -149,6 +147,69 @@ const tasks: ITask[] = [
         priority: Priority.Medium,
         participants: [users[2].name],
         date: new Date('2024-09-29'),
+    },
+    {
+        id: '9',
+        title: 'Auditar seguridad en el backend',
+        description: 'Revisar e implementar mejoras de seguridad en la API y la base de datos.',
+        completed: false,
+        priority: Priority.High,
+        participants: [users[1].name, users[3].name],
+        date: new Date('2024-10-20'),
+    },
+    {
+        id: '10',
+        title: 'Actualizar documentación técnica',
+        description: 'Mejorar y actualizar la documentación técnica del proyecto para reflejar los cambios recientes.',
+        completed: true,
+        priority: Priority.Low,
+        participants: [users[0].name],
+        date: new Date('2024-09-25'),
+    },
+    {
+        id: '11',
+        title: 'Integrar autenticación OAuth',
+        description: 'Implementar un sistema de autenticación con OAuth para mejorar la seguridad de inicio de sesión.',
+        completed: false,
+        priority: Priority.Medium,
+        participants: [users[1].name, users[4].name],
+        date: new Date('2024-10-22'),
+    },
+    {
+        id: '12',
+        title: 'Configurar servidor Nginx',
+        description: 'Configurar y optimizar el servidor Nginx para balanceo de carga y seguridad.',
+        completed: false,
+        priority: Priority.High,
+        participants: [users[2].name],
+        date: new Date('2024-10-25'),
+    },
+    {
+        id: '13',
+        title: 'Escribir pruebas unitarias',
+        description: 'Desarrollar y ejecutar pruebas unitarias para el backend con Jest.',
+        completed: true,
+        priority: Priority.Medium,
+        participants: [users[0].name, users[3].name],
+        date: new Date('2024-09-28'),
+    },
+    {
+        id: '14',
+        title: 'Optimizar imágenes del sitio web',
+        description: 'Reducir el tamaño de las imágenes para mejorar el tiempo de carga del sitio web.',
+        completed: false,
+        priority: Priority.Low,
+        participants: [users[1].name],
+        date: new Date('2024-10-05'),
+    },
+    {
+        id: '15',
+        title: 'Actualizar dependencias del proyecto',
+        description: 'Actualizar todas las dependencias del proyecto a sus últimas versiones.',
+        completed: true,
+        priority: Priority.Medium,
+        participants: [users[0].name],
+        date: new Date('2024-09-30'),
     },
 ];
 

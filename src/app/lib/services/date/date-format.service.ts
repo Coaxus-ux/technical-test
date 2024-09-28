@@ -11,6 +11,17 @@ export class DateFormatService {
 
     getTimeOfDay(date: Date): string {
         const hours = date.getHours();
-        return hours < 12 ? 'Good Morning' : 'Good Afternoon';
+
+        if (hours >= 0 && hours < 6) {
+            return 'Good Early Morning';
+        } else if (hours >= 6 && hours < 12) {
+            return 'Good Morning';
+        } else if (hours === 12) {
+            return 'Good Noon';
+        } else if (hours > 12 && hours < 18) {
+            return 'Good Afternoon';
+        } else {
+            return 'Good Evening';
+        }
     }
 }

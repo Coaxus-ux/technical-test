@@ -1,4 +1,5 @@
 <div class="gap-2 flex items-center">
     <p-checkbox [(ngModel)]="checked" [binary]="true" inputId="ny"></p-checkbox>
     <label for="ny" class="">{{ task?.title }}</label>
+    <app-chip-task [isComplete]="task?.completed"></app-chip-task>
 </div>
