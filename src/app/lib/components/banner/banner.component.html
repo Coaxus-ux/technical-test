@@ -1,9 +1,9 @@
-<h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium lg:items-center align-middle flex lg:flex-row flex-col lg:justify-between">
+<h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium lg:items-center align-middle flex lg:flex-row flex-col lg:justify-between lg:mb-14 mb-5">
     <div>
         {{ greeting }}, Julian
         <span class="icon-[fluent-emoji--waving-hand] icon-size"></span>
 
-        <p class="text-sm sm:text-base md:text-lg font-normal text-gray-500">{{ formattedDate }}</p>
+        <p class="text-sm sm:text-base md:text-lg font-normal text-gray-500">Today, {{ formattedDate }}</p>
     </div>
     <div class="bg-white flex items-center p-2 rounded-md gap-2 w-36 mt-5 lg:mt-0 self-end ">
         <p-menu #menu [model]="filters" [popup]="true"></p-menu>

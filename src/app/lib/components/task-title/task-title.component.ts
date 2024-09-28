@@ -12,5 +12,4 @@ import { ChipTaskComponent } from '@lib/components/chip-task/chip-task.component
 })
 export class TaskTitleComponent {
     @Input() task: ITask | undefined;
-    @Input() checked = false;
 }

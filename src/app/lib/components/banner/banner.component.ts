@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DateFormatService } from '@lib/services';
+import { DateFormatService, TaskService } from '@lib/services';
 import { ToastModule } from 'primeng/toast';
 import { MenuModule } from 'primeng/menu';
 import { MenuItem } from 'primeng/api';
@@ -22,6 +22,7 @@ export class BannerComponent {
                     label: 'Complete',
                     icon: 'pi pi-fw pi-star-fill',
                     command: (): void => {
+                        this._taskService.getCompletedTasks();
                         this.buttonTitle = 'Complete';
                     },
                 },
@@ -29,6 +30,7 @@ export class BannerComponent {
                     label: 'Pending',
                     icon: 'pi pi-fw pi-star',
                     command: (): void => {
+                        this._taskService.getPendingTasks();
                         this.buttonTitle = 'Pending';
                     },
                 },
@@ -36,6 +38,7 @@ export class BannerComponent {
                     label: 'All',
                     icon: 'pi pi-fw pi-circle',
                     command: (): void => {
+                        this._taskService.getAllTasks();
                         this.buttonTitle = 'All';
                     },
                 },
@@ -43,7 +46,7 @@ export class BannerComponent {
         },
     ];
 
-    constructor(private _dateFormatService: DateFormatService) {
+    constructor(private _dateFormatService: DateFormatService, private _taskService: TaskService) {
         this.formattedDate = this._dateFormatService.formatTodayDate(new Date());
         this.greeting = this._dateFormatService.getTimeOfDay(new Date());
     }

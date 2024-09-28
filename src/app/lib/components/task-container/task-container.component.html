@@ -1,4 +1,4 @@
 <div class="bg-white p-3 rounded-xl flex w-full my-3 justify-between items-center">
     <app-task-title [task]="task"></app-task-title>
-    <app-task-actions></app-task-actions>
+    <app-task-actions [taskId]="task!.id" [taskDate]="task!.date"></app-task-actions>
 </div>

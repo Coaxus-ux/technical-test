@@ -1,32 +1,39 @@
 import { Injectable } from '@angular/core';
 import { ITask } from '@lib/interfaces';
 import { Priority } from '@lib/enums/priority';
-import { Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { tasks } from '@lib/utils/initdb';
-
 @Injectable({
     providedIn: 'root',
 })
 export class TaskService {
     private _tasks: ITask[] = tasks;
+    private _tasksSubject: BehaviorSubject<ITask[]> = new BehaviorSubject(this._tasks);
 
     getTasks(): Observable<ITask[]> {
-        return of(this._tasks);
+        return this._tasksSubject.asObservable();
     }
 
-    getTaskById(id: string): Observable<ITask | undefined> {
-        const task = this._tasks.find((task) => task.id === id);
-        return of(task);
+    getAllTasks(): void {
+        this._tasksSubject.next(this._tasks);
     }
 
-    getCompletedTasks(): Observable<ITask[]> {
+    getCompletedTasks(): void {
         const completedTasks = this._tasks.filter((task) => task.completed);
-        return of(completedTasks);
+        this._tasksSubject.next(completedTasks);
     }
 
-    getPendingTasks(): Observable<ITask[]> {
+    getPendingTasks(): void {
         const pendingTasks = this._tasks.filter((task) => !task.completed);
-        return of(pendingTasks);
+        this._tasksSubject.next(pendingTasks);
+    }
+
+    deleteTask(id: string): void {
+        const index = this._tasks.findIndex((t) => t.id === id);
+        if (index !== -1) {
+            this._tasks.splice(index, 1);
+        }
+        this._tasksSubject.next(this._tasks);
     }
 
     getTasksByPriority(priority: Priority): Observable<ITask[]> {
@@ -44,11 +51,6 @@ export class TaskService {
         if (index !== -1) {
             this._tasks[index] = task;
         }
-        return of(this._tasks);
-    }
-
-    deleteTask(id: string): Observable<ITask[]> {
-        this._tasks = this._tasks.filter((task) => task.id !== id);
         return of(this._tasks);
     }
 
