@@ -6,32 +6,26 @@ const skills: ISkill[] = [
     {
         id: 1,
         name: 'JavaScript',
-        description: 'Lenguaje de programación utilizado principalmente en el desarrollo web.',
     },
     {
         id: 2,
         name: 'TypeScript',
-        description: 'Superset de JavaScript que agrega tipado estático opcional.',
     },
     {
         id: 3,
         name: 'React',
-        description: 'Librería para construir interfaces de usuario.',
     },
     {
         id: 4,
         name: 'Node.js',
-        description: 'Entorno de ejecución de JavaScript en el lado del servidor.',
     },
     {
         id: 5,
         name: 'CSS',
-        description: 'Lenguaje de diseño gráfico para definir la presentación de un documento HTML.',
     },
     {
         id: 6,
         name: 'Angular',
-        description: 'Framework de desarrollo frontend basado en TypeScript.',
     },
 ];
 

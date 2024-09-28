@@ -27,6 +27,7 @@ import { MultiSelectModule } from 'primeng/multiselect';
         MultiSelectModule,
     ],
     templateUrl: './add-task.component.html',
+    styleUrls: ['./add-task.component.css'],
 })
 export class AddTaskComponent {
     visible = false;

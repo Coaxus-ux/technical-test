@@ -1,0 +1,19 @@
+/* stylelint-disable-next-line selector-pseudo-element-no-unknown */
+::ng-deep p-chips .p-chips {
+    width: 100%;
+}
+
+/* stylelint-disable-next-line selector-pseudo-element-no-unknown */
+::ng-deep p-chips .p-chips-multiple-container {
+    width: 100%;
+}
+
+/* stylelint-disable-next-line selector-pseudo-element-no-unknown */
+::ng-deep p-chips .p-chips-input-token {
+    width: 100%;
+}
+
+/* stylelint-disable-next-line selector-pseudo-element-no-unknown */
+::ng-deep p-chips .p-inputtext {
+    width: 100%;
+}

@@ -13,4 +13,11 @@ export class SkillService {
     get skills(): Observable<ISkill[]> {
         return this._skillsSubject.asObservable();
     }
+
+    createSkills(skill: string[]): ISkill[] {
+        return skill.map((s) => ({
+            id: this._skills.length + 1,
+            name: s,
+        }));
+    }
 }

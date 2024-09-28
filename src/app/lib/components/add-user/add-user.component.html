@@ -1,13 +1,35 @@
 <div class="card flex justify-content-center">
     <p-dialog header="Add person" [(visible)]="visible" [breakpoints]="{ '960px': '75vw' }" [style]="{ width: '50vw' }"
-              [draggable]="false" [resizable]="false">
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-            est laborum.
-        </p>
+              [draggable]="false" [resizable]="false" (onHide)="handleHide()">
+        <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="flex flex-col gap-4">
+            <!-- Campo nombre -->
+            <div class="flex flex-col gap-2">
+                <label for="name">Name</label>
+                <input id="name" type="text" pInputText placeholder="Name" formControlName="name" />
+                <small *ngIf="userForm.get('name')?.invalid && userForm.get('name')?.touched" class="text-red-600">
+                    Name is required.
+                </small>
+            </div>
+
+            <!-- Campo edad -->
+            <div class="flex flex-col gap-2">
+                <label for="age">Age</label>
+                <input id="age" type="number" pInputText placeholder="Age" formControlName="age" />
+                <small *ngIf="userForm.get('age')?.invalid && userForm.get('age')?.touched" class="text-red-600">
+                    <span *ngIf="userForm.get('age')?.errors?.['required']">Age is required.</span>
+                    <span *ngIf="userForm.get('age')?.errors?.['ageInvalid']">Age must be between 18 and 100.</span>
+                    <span *ngIf="userForm.get('age')?.errors?.['pattern']">Age must be a valid number.</span>
+                </small>
+            </div>
+
+            <!-- Campo habilidades -->
+            <div class="flex flex-col gap-2">
+                <label for="skills">Skills</label>
+                <p-chips formControlName="skills" class="w-full"></p-chips>
+            </div>
+
+            <!-- Botón de envío -->
+            <button type="submit" pButton label="Submit" icon="pi pi-check" aria-label="Submit user"></button>
+        </form>
     </p-dialog>
 </div>
