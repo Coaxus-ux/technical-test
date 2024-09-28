@@ -1,2 +1,24 @@
-/*
-non empty */
+/* stylelint-disable-next-line selector-pseudo-element-no-unknown */
+::ng-deep p-multiselect .p-multiselect {
+    width: 100%;
+}
+
+/* stylelint-disable-next-line selector-pseudo-element-no-unknown */
+::ng-deep p-multiselect .p-multiselect-panel {
+    width: 100%;
+}
+
+/* stylelint-disable-next-line selector-pseudo-element-no-unknown */
+::ng-deep p-multiselect .p-multiselect-items > div {
+    width: 100%;
+}
+
+/* stylelint-disable-next-line selector-pseudo-element-no-unknown */
+::ng-deep p-multiselect .p-multiselect-label-container {
+    width: 100%;
+}
+
+/* stylelint-disable-next-line selector-pseudo-element-no-unknown */
+::ng-deep p-multiselect .p-multiselect-item {
+    width: 100%;
+}

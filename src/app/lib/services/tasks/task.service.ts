@@ -3,6 +3,7 @@ import { ITask } from '@lib/interfaces';
 import { Priority } from '@lib/enums/priority';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { tasks } from '@lib/utils/initdb';
+
 @Injectable({
     providedIn: 'root',
 })
@@ -36,14 +37,15 @@ export class TaskService {
         this._tasksSubject.next(this._tasks);
     }
 
+    addTask(task: ITask): void {
+        task.id = `${this._tasks.length + 1}`;
+        this._tasks.push(task);
+        this._tasksSubject.next(this._tasks);
+    }
+
     getTasksByPriority(priority: Priority): Observable<ITask[]> {
         const tasksByPriority = this._tasks.filter((task) => task.priority === priority);
         return of(tasksByPriority);
-    }
-
-    addTask(task: ITask): Observable<ITask[]> {
-        this._tasks.push(task);
-        return of(this._tasks);
     }
 
     updateTask(task: ITask): Observable<ITask[]> {
