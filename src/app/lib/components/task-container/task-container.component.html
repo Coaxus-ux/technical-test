@@ -1,5 +1,5 @@
-<div class="bg-white p-3 rounded-xl flex w-full my-3 justify-between items-center">
+<div class="bg-white p-3 rounded-xl flex w-full my-3 lg:justify-between flex-col lg:flex-row lg:items-center gap-3 lg:gap-0">
     <app-task-title [task]="task"></app-task-title>
     <app-members [members]="task!.participants"></app-members>
-    <app-task-actions [taskId]="task!.id" [taskDate]="task!.date"></app-task-actions>
+    <app-task-actions [task]="task"></app-task-actions>
 </div>

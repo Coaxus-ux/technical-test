@@ -11,6 +11,6 @@ import { MembersComponent } from '@lib/components/members/members.component';
     imports: [TaskTitleComponent, TaskActionsComponent, MembersComponent],
 })
 export class TaskContainerComponent {
-    @Input() task: ITask | undefined;
+    @Input() task!: ITask;
     @Input() checked = false;
 }

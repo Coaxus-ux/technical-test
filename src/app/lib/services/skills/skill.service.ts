@@ -10,10 +10,6 @@ export class SkillService {
     private _skills: ISkill[] = skills;
     private _skillsSubject: BehaviorSubject<ISkill[]> = new BehaviorSubject(this._skills);
 
-    constructor() {
-        console.log('SkillService created');
-    }
-
     get skills(): Observable<ISkill[]> {
         return this._skillsSubject.asObservable();
     }

@@ -1,4 +1,4 @@
-<button pRipple class="fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-black text-white p-5 rounded-xl"
+<button pRipple class="fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-black text-white p-5 rounded-xl z-50"
         (click)="showDialog()">
     <p class="items-center flex gap-1">
         <span class="icon-[octicon--plus-24] small-icon-size"></span>
@@ -6,7 +6,7 @@
     </p>
 </button>
 <p-dialog header="Add Task" [(visible)]="visible" [breakpoints]="{ '960px': '75vw' }"
-          [style]="{ width: '50vw', height: '100vh'}"
+          [style]="{ width: '50vw'}"
           [draggable]="false" [resizable]="false">
 
     <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="flex flex-col gap-3 h-full justify-between">
@@ -14,11 +14,12 @@
             <input pInputText placeholder="Task title" formControlName="title" />
             <input pInputText placeholder="Description" formControlName="description">
             <div class="flex gap-5">
-                <p-dropdown [options]="priorityOptions" placeholder="Select a priority"
+                <p-dropdown appendTo="body" [options]="priorityOptions" placeholder="Select a priority"
                             formControlName="priority"></p-dropdown>
-                <p-calendar [showIcon]="true" placeholder="Date" formControlName="date"></p-calendar>
+                <p-calendar appendTo="body" [showIcon]="true" placeholder="Date" formControlName="date"></p-calendar>
             </div>
-            <p-multiSelect [options]="users" optionLabel="name" placeholder="Members" class="w-full" formControlName="participants"></p-multiSelect>
+            <p-multiSelect appendTo="body" [options]="users" optionLabel="name" placeholder="Members" class="w-full"
+                           formControlName="participants"></p-multiSelect>
         </div>
 
         <div class="flex justify-end">

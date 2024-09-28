@@ -27,7 +27,6 @@ import { MultiSelectModule } from 'primeng/multiselect';
         MultiSelectModule,
     ],
     templateUrl: './add-task.component.html',
-    styleUrls: ['./add-task.component.css'],
 })
 export class AddTaskComponent {
     visible = false;
@@ -63,12 +62,8 @@ export class AddTaskComponent {
 
     onSubmit(): void {
         if (this.userForm.valid) {
-            console.log(this.userForm.value);
             const task: ITask = this.userForm.value as ITask;
-
             this._taskService.addTask(task);
-        } else {
-            console.log('Form is invalid');
         }
     }
 

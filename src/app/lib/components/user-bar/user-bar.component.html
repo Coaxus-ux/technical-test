@@ -1,7 +1,7 @@
 <div class="flex justify-between items-center mb-6">
     <h2 class="text-xl font-bold">All users <span class="text-gray-700">{{ users }}</span></h2>
     <div class="flex space-x-4">
-        <button pRipple class=" bg-black text-white p-2 rounded-xl">
+        <button pRipple class=" bg-black text-white p-2 rounded-xl" (click)="openTask()">
             <p class="items-center flex gap-1 text-sm">
                 <span class="icon-[octicon--plus-24] small-icon-size"></span>
                 Add user
@@ -9,3 +9,5 @@
         </button>
     </div>
 </div>
+
+<app-add-user [visible]="isVisible" (onHide)="onDialogHide()"></app-add-user>
